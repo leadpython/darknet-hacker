@@ -1,0 +1,98 @@
+#dashboard-page {
+  padding: 5px;
+}
+
+/* HACKER PROFILE WIDGET */
+#dashboard-profile-widget {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  height: 125px;
+  padding: 10px;
+}
+#dashboard-profile-content {
+}
+#dashboard-profile-image {
+  padding: 5px;
+  height: 90px;
+  width: auto;
+}
+#dashboard-profile-details {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 90px;
+  right: 5px;
+  line-height: 18px;
+  padding-left: 5px;
+}
+.dashboard-profile-details-label {
+  color: rgb(150,150,150);
+  font-size: 12px;
+}
+.dashboard-profile-details-info {
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+/* BANK WIDGET */
+#dashboard-bank-widget {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 135px;
+  height: 75px;
+  padding: 10px;
+}
+#dashboard-bank-content {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#dashboard-bank-balance {
+  font-size: 25px;
+  border-bottom: 1px solid rgb(50,50,50);
+}
+
+/* HACKING TOOLBOX WIDGET */
+#dashboard-toolbox-widget {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 215px;
+  bottom: 200px;
+  padding: 10px;
+}
+#dashboard-toolbox-content {
+}
+#dashboard-toolbox-column-label-container {
+  position: absolute;
+  display: flex;
+  color: rgb(100,100,100);
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 20px;
+  border-bottom: 1px solid rgb(50,50,50);
+}
+.dashboard-toolbox-column-label {
+  font-size: 12px;
+  text-align: center;
+}
+#dashboard-toolbox-tools-container {
+  position: absolute;
+  padding: 5px;
+  top: 20px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+/* COMAND CENTER */
+#dashboard-command-center {
+  position: absolute;
+  bottom: 0px;
+  left: 5px;
+  right: 5px;
+}
