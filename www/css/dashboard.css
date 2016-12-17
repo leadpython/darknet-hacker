@@ -61,7 +61,7 @@
   left: 5px;
   right: 5px;
   top: 215px;
-  bottom: 200px;
+  bottom: 150px;
   padding: 10px;
 }
 #dashboard-toolbox-content {
@@ -95,4 +95,26 @@
   bottom: 0px;
   left: 5px;
   right: 5px;
+  bottom: 5px;
+  height: 140px;
+}
+.dashboard-command {
+  flex: 1;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(25,25,25);
+  margin: 2px;
+  height: 65px;
+}
+.dashboard-command:active {
+  background-color: rgb(100,100,100);
+}
+.dashboard-command-image {
+  height: 30px;;
+  width: auto;
+}
+.dashboard-command-label {
+  font-size: 12px;
+  line-height: 12px;
 }
