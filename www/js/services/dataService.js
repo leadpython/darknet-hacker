@@ -31,56 +31,56 @@ angular.module('darknet-hacker')
     service.user.completed = [
       {
         normal: 0,
-        timed: 0,
-        drained: 0,
+        triangulation: 0,
+        darknet: 0,
         completed: false
       },
       {
         normal: 0,
-        timed: 0,
-        drained: 0,
+        triangulation: 0,
+        darknet: 0,
         completed: false
       },
       {
         normal: 0,
-        timed: 0,
-        drained: 0,
+        triangulation: 0,
+        darknet: 0,
         completed: false
       },
       {
         normal: 0,
-        timed: 0,
-        drained: 0,
+        triangulation: 0,
+        darknet: 0,
         completed: false
       },
       {
         normal: 0,
-        timed: 0,
-        drained: 0,
+        triangulation: 0,
+        darknet: 0,
         completed: false
       },
       {
         normal: 0,
-        timed: 0,
-        drained: 0,
+        triangulation: 0,
+        darknet: 0,
         completed: false
       },
       {
         normal: 0,
-        timed: 0,
-        drained: 0,
+        triangulation: 0,
+        darknet: 0,
         completed: false
       },
       {
         normal: 0,
-        timed: 0,
-        drained: 0,
+        triangulation: 0,
+        darknet: 0,
         completed: false
       },
       {
         normal: 0,
-        timed: 0,
-        drained: 0,
+        triangulation: 0,
+        darknet: 0,
         completed: false
       }
     ];

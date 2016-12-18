@@ -1,0 +1,43 @@
+#levels-page {
+
+}
+#levels-page-content {
+  position: absolute;
+  top: 0;
+  bottom: 40px;
+  left: 0;
+  right: 0px;
+  padding: 5px;
+}
+.levels-level-container {
+  margin: 10px;
+  position: relative;
+  padding-top: 25px;
+}
+.levels-level-title {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  padding: 5px;
+}
+.levels-level-item {
+  flex: 1;
+  display: inline-block;
+  text-align: center;
+  background-color: rgb(25,25,25);
+  margin: 2px;
+  padding: 10px;
+}
+.levels-level-item:active {
+  background-color: rgb(100,100,100);
+}
+.levels-level-image {
+  width: 50px;
+  height: auto;
+}
+.levels-level-name {
+  font-size: 12px;
+  color: rgb(150,150,150);
+}

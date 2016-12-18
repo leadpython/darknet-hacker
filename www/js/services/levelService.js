@@ -31,22 +31,22 @@ angular.module('darknet-hacker')
     },
     {
       name: 'CIA',
-      reward: 3125000,
+      reward: 3200000,
       imageUrl: './img/cia.png'
     },
     {
       name: 'multinational corporation',
-      reward: 15625000,
+      reward: 1600000,
       imageUrl: './img/corporation.png'
     },
     {
       name: 'central bank',
-      reward: 78125000,
+      reward: 80000000,
       imageUrl: './img/bank.png'
     },
     {
       name: 'rogue hacker',
-      reward: 390625000,
+      reward: 400000000,
       imageUrl: './img/rogue.png'
     }
   ];

@@ -7,6 +7,20 @@
   font-family: square;
   color: #00cc99;
 }
+.page-back {
+  font-size: 25px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  background-color: rgb(25,25,25);
+  text-align: center;
+  height: 40px;
+}
+.page-back:active {
+  background-color: rgb(150,150,150);
+}
 .widget-box {
   border: 5px solid rgb(50,50,50);
   border-top: 0;

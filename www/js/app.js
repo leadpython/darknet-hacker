@@ -12,12 +12,18 @@ angular.module('darknet-hacker', ['ionic'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.views.transition('none');
   $stateProvider
     .state('dashboard', {
       url: '/dashboard',
       templateUrl: 'templates/pages/dashboard.html',
       controller: 'dashboardController'
+    })
+    .state('level', {
+      url: '/level',
+      templateUrl: 'templates/pages/level.html',
+      controller: 'levelController'
     })
   $urlRouterProvider.otherwise('/dashboard');
 });
