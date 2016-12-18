@@ -1,3 +1,22 @@
-<ion-modal-view class="page">
-  asdfadsf
+<ion-modal-view class="page" id="level-modal-page">
+
+<div id="level-modal-selected-level-container">
+  <img id="level-modal-selected-level-image" src="{{selectedLevel.imageUrl}}" >
+  <div id="level-modal-selected-level-economics">
+    <div class="level-modal-selected-level-economics-label"><u>reward:</u></div>
+    <div class="level-modal-selected-level-economics-amount">$ 100,000,000</div>
+    <div class="level-modal-selected-level-economics-label"><u>cost:</u></div>
+    <div class="level-modal-selected-level-economics-amount">$ 100,000,000</div>
+  </div>
+  <div id="level-modal-selected-level-details">
+    password length: {{selectedLevel.length}} <br>
+    mode: {{selectedLevel.mode}} <br>
+    reward multiplier: x{{getMultiplier(selectedLevel.mode)}} <br>
+  </div>
+</div>
+
+<div id="level-modal-initiate-hack" ng-click="setLevel(selectedLevel)">initiate hack</div>
+
+<div class="page-back" ng-click="hideLevelModal()">close</div>
+
 </ion-modal-view>

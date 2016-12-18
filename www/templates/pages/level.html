@@ -6,18 +6,20 @@
     <div class="levels-level-item" ng-click="selectLevel(level, 'normal')">
       <img class="levels-level-image" src="{{level.imageUrl}}">
       <div class="levels-level-name">normal</div>
+      <div class="ion-checkmark-circled levels-level-completed"></div>
     </div>
     <div class="levels-level-item" ng-click="selectLevel(level, 'triangulation')">
-      <img class="levels-level-image" src="{{level.imageUrl}}">
+      <img class="levels-level-image" src="../../img/triangulate.png">
       <div class="levels-level-name">triangulation</div>
+      <div class="ion-checkmark-circled levels-level-completed"></div>
     </div>
     <div class="levels-level-item" ng-click="selectLevel(level, 'darknet')">
-      <img class="levels-level-image" src="{{level.imageUrl}}">
-      <div class="levels-level-name">darknet</div>
+      <img class="levels-level-image" src="../../img/darknet.png">
+      <div class="levels-level-name">dark.net</div>
+      <div class="ion-checkmark-circled levels-level-completed"></div>
     </div>
   </div>
 </ion-content>
-
 
 <div class="page-back" ng-click="goTo('dashboard')">&lt back</div>
 </ion-view>

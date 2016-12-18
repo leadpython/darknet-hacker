@@ -1,11 +1,38 @@
 angular.module('darknet-hacker')
 
-.controller('levelController', function($scope, $location, levelService, $ionicModal) {
+.controller('levelController', function($scope, $interval, $location, levelService, $ionicModal, gameService) {
   $scope.goTo = (location) => {
     $location.path('/' + location);
   }
   $scope.getLevels = () => {
     return levelService.levels;
+  }
+  $scope.getMultiplier = (mode) => {
+    switch (mode) {
+      case 'normal':
+        return 1;
+      case 'triangulation':
+        return 2;
+      case 'darknet':
+        return 5;
+    }
+  }
+  $scope.setLevel = (level) => {
+    gameService.setLevel(level);
+    $scope.hideLevelModal();
+    $scope.loadingBarProgress = 0;
+    $scope.startLoadingWindow();
+  }
+  $scope.startLoadingWindow = () => {
+    $scope.loadingModal.show();
+    let loadingAnimation = $interval(() => {
+      $scope.loadingBarProgress++;
+      if ($scope.loadingBarProgress >= 100) {
+        $interval.cancel(loadingAnimation);
+        $scope.loadingModal.hide();
+        $scope.goTo('game');
+      }
+    }, 20);
   }
   $scope.selectLevel = (level, mode) => {
     $scope.selectedLevel = level;
@@ -22,4 +49,9 @@ angular.module('darknet-hacker')
   }).then(function(modal) {
     $scope.levelModal = modal;
   });
-})
+  $ionicModal.fromTemplateUrl('../../templates/modals/loading-modal.html', {
+    scope: $scope
+  }).then((modal) => {
+    $scope.loadingModal = modal;
+  });
+});

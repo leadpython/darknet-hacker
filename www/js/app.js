@@ -25,5 +25,10 @@ angular.module('darknet-hacker', ['ionic'])
       templateUrl: 'templates/pages/level.html',
       controller: 'levelController'
     })
+    .state('game', {
+      url: '/game',
+      templateUrl: 'templates/pages/game.html',
+      controller: 'gameController'
+    })
   $urlRouterProvider.otherwise('/dashboard');
 });
