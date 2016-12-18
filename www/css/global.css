@@ -22,6 +22,7 @@
   padding: 5px;
   height: 30px;
   background-color: rgb(50,50,50);
+  font-size: 15px;
 }
 .widget-box-content {
   position: absolute;
