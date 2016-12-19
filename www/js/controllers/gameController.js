@@ -87,7 +87,7 @@ angular.module('darknet-hacker')
     $scope.animations.drainDefenseAnimation = $interval(() => {
       $scope.gameOptions.reward = Math.floor($scope.gameOptions.reward * (1.0 - $scope.gameOptions.drainRate));
       if ($scope.gameOptions.reward <= 1) {
-        $scope.gameOptions.reward
+        $scope.gameOptions.reward = 0;
         $interval.cancel($scope.animations.drainDefenseAnimation);
       }
     }, 100 * $scope.gameOptions.timeSpeedMultiplier);
