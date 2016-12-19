@@ -1,0 +1,120 @@
+#game-level-widget {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  height: 125px;
+}
+#game-level-name {
+  color: rgb(150,150,150);
+}
+#game-level-image {
+  height: 90px;
+  width: auto;
+  padding: 10px;
+  background-color: black;
+}
+#game-level-label {
+  position: absolute;
+  top: 5px;
+  left: 100px;
+  font-size: 15px;
+  color: rgb(100,100,100);
+}
+#game-level-amount {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  bottom: 10px;
+  right: 10px;
+  background-color: black;
+  padding: 17px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 30px;
+  color: rgb(0,255,100);
+}
+
+/* TRIES WIDGET */
+#game-tries-container {
+  position: absolute;
+  background-color: rgb(50,50,50);
+  top: 135px;
+  left: 5px;
+  right: 5px;
+  height: 50px;
+}
+#game-tries-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 50px;
+  width: auto;
+  padding: 10px;
+}
+#game-tries-content {
+  position: absolute;
+  left: 55px;
+  right: 0px;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  border: 5px solid rgb(50,50,50);
+  border-left: 0;
+  padding: 5px;
+}
+.game-tries-box {
+  display: inline-block;
+  height: 30px;
+  width: 12px;
+  background-color: #00cc99;
+  margin-right: 4px;
+}
+
+/* HISTORY LOG */
+#game-history-log {
+  position: absolute;
+  top: 190px;
+  left: 5px;
+  right: 5px;
+  bottom: 55px;
+}
+#game-history-log-label {
+
+}
+#game-history-log-content {
+  background-color: black;
+}
+
+/* TIME LIMIT */
+#game-time-container {
+  position: absolute;
+  background-color: rgb(50,50,50);
+  top: 175px;
+  right: 0px;
+  height: 50px;
+  width: 150px;
+  border: 1px solid rgb(150,150,150);
+}
+#game-time-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 50px;
+  width: auto;
+  padding: 10px;
+}
+#game-time-content {
+  position: absolute;
+  left: 55px;
+  right: 0px;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(25,25,25);
+  border: 5px solid rgb(50,50,50);
+  border-left: 0;
+  padding: 5px;
+  font-size: 30px;
+  padding: 10px;
+  color: white;
+}

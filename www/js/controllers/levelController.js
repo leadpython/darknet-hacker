@@ -27,6 +27,7 @@ angular.module('darknet-hacker')
     $scope.loadingModal.show();
     let loadingAnimation = $interval(() => {
       $scope.loadingBarProgress++;
+      // go to game after done
       if ($scope.loadingBarProgress >= 100) {
         $interval.cancel(loadingAnimation);
         $scope.loadingModal.hide();
@@ -50,7 +51,8 @@ angular.module('darknet-hacker')
     $scope.levelModal = modal;
   });
   $ionicModal.fromTemplateUrl('../../templates/modals/loading-modal.html', {
-    scope: $scope
+    scope: $scope,
+    animation: 'slide-in-up'
   }).then((modal) => {
     $scope.loadingModal = modal;
   });

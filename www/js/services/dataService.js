@@ -87,5 +87,13 @@ angular.module('darknet-hacker')
     service.saveUser();
   }
 
+  // when a tool is used
+  service.useTool = (toolName) => {
+    if (service.user.toolbox[toolName] <= 0) {
+      return;
+    }
+    service.user.toolbox[toolName]--;
+  }
+
   return service;
 })

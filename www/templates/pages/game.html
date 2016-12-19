@@ -1,2 +1,36 @@
 <ion-view class="page">
+
+<!-- LEVEL INFO WIDGET -->
+<div class="widget-box" id="game-level-widget">
+  <div class="widget-box-header" id="game-level-name">{{gameOptions.name}}</div>
+  <div class="widget-box-content">
+    <img id="game-level-image" src="{{gameOptions.imageUrl}}">
+    <div id="game-level-label"><u>account balance:</u></div>
+    <div id="game-level-amount">$ {{gameOptions.reward}}.00</div>
+  </div>
+</div>
+
+<!-- TRIES WIDGET -->
+<div id="game-tries-container">
+  <img id="game-tries-icon" src="../../img/burner.png">
+  <div id="game-tries-content">
+    <div class="game-tries-box" ng-repeat="box in getTryBoxes() track by $index"></div>
+  </div>
+</div>
+
+<!-- HISTORY LOG -->
+<div class="widget-box" id="game-history-log">
+  <div class="widget-box-header">history log</div>
+  <div class="widget-box-content" id="game-history-log-content">
+  </div>
+</div>
+
+<!-- TIME LIMIT -->
+<div id="game-time-container" ng-if="shouldTimeLimitShow()">
+  <img id="game-time-icon" src="../../img/triangulate.png">
+  <div id="game-time-content">
+    {{gameOptions.timeLimit}}
+  </div>
+</div>
+
 </ion-view>
