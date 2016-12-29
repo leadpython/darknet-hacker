@@ -1,13 +1,27 @@
 <ion-view class="page">
 
-<!-- LEVEL INFO WIDGET -->
-<div class="widget-box" id="game-level-widget">
-  <div class="widget-box-header" id="game-level-name">{{gameOptions.name}}</div>
-  <div class="widget-box-content">
-    <img id="game-level-image" src="{{gameOptions.imageUrl}}">
-    <div id="game-level-label"><u>account balance:</u></div>
-    <div id="game-level-amount">$ {{gameOptions.reward}}.00</div>
+<!-- ACCOUNT WIDGET -->
+<div id="game-account-widget">
+  <img id="game-account-image" src="{{gameOptions.imageUrl}}">
+  <div id="game-account-login">
+    <div class="game-account-label"><u>username:</u></div>
+    <div class="game-account-inputs" style="background-color: rgb(75,75,75);">victim12345</div>
+    <div class="game-account-label"><u>password:</u></div>
+    <div class="game-account-inputs">{{playerGuess}}</div>
   </div>
+</div>
+
+<!-- BANK BALANCE -->
+<div id="game-bank-balance-container">
+  <img id="game-bank-balance-image" src="../../img/account.png">
+  <div id="game-bank-balance-content">
+    <div id="game-bank-balance-bar" style="width: {{getRewardLeftPercentage() + '%'}}"><div id="game-bank-balance-bar-amount">$ {{gameOptions.reward}}.00</div></div>
+  </div>
+</div>
+
+<!-- DRAIN INDICATOR -->
+<div id="game-drain-indicator" ng-if="shouldDrainShow()">
+  <img id="game-drain-image" src="../../img/darknet.png">
 </div>
 
 <!-- TRIES WIDGET -->
@@ -15,13 +29,6 @@
   <img id="game-tries-icon" src="../../img/burner.png">
   <div id="game-tries-content">
     <div class="game-tries-box" ng-repeat="box in getTryBoxes() track by $index"></div>
-  </div>
-</div>
-
-<!-- HISTORY LOG -->
-<div class="widget-box" id="game-history-log">
-  <div class="widget-box-header">history log</div>
-  <div class="widget-box-content" id="game-history-log-content">
   </div>
 </div>
 
@@ -33,9 +40,62 @@
   </div>
 </div>
 
-<!-- TOOLBELT -->
-<div id="game-toolbelt">
-  
+<!-- TOOLBOX & HISTORY LOG -->
+<div id="game-keypad-log-container">
+
+  <!-- HISTORY LOG-->
+  <div id="game-history-log">
+    <div class="widget-box-header">history log</div>
+    <ion-content id="game-history-log-content">
+      <div class="game-history-log-entry" ng-repeat="log in historyLog track by $index">
+        <div class="game-history-log-guess">{{log.guess}}</div>
+        <div class="game-history-log-row">
+          <span class="game-clue-box" style="background-color: green;" ng-repeat="box in generateClueBoxes(log.green) track by $index">
+          </span>
+        </div>
+        <div class="game-history-log-row">
+          <span class="game-clue-box" style="background-color: yellow;" ng-repeat="box in generateClueBoxes(log.yellow) track by $index">
+          </span>
+        </div>
+        <div class="game-history-log-row">
+          <span class="game-clue-box" style="background-color: red;" ng-repeat="box in generateClueBoxes(log.red) track by $index">
+          </span>
+        </div>
+      </div>
+    </ion-content>
+  </div>
+
+
+  <!-- TOOLBELT -->
+  <div id="game-toolbelt">
+    <div class="game-toolbelt-item" style="border: none;" ng-click="activateBurnerPhone()">
+      <img class="game-toolbelt-tool-image" src="../../img/burner.png">
+      <div class="game-toolbelt-tool-name">burner phone</div>
+    </div>
+    <div class="game-toolbelt-item" style="border-top: 1px solid rgb(50,50,50)" ng-click="activateDisruption()">
+      <img class="game-toolbelt-tool-image" src="../../img/disrupt.png">
+      <div class="game-toolbelt-tool-name">disrupt</div>
+    </div>
+    <div class="game-toolbelt-item" style="border-top: 1px solid rgb(50,50,50)" ng-click="activateSpeed()">
+      <img class="game-toolbelt-tool-image" src="../../img/speed.png">
+      <div class="game-toolbelt-tool-name">speed</div>
+    </div>
+    <div class="game-toolbelt-item" style="border-top: 1px solid rgb(50,50,50)" ng-click="activateKeylogger()">
+      <img class="game-toolbelt-tool-image" src="../../img/keylogger.png">
+      <div class="game-toolbelt-tool-name">keylogger</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DISRUPTED -->
+<div id="game-state-disrupted" ng-if="gameState.disrupted">defenses disabled</div>
+<!-- TIME SLOW -->
+<div id="game-state-time" ng-if="gameState.slowed">time is slow</div>
+
+
+<div id="game-keypad-toggle-button" style="{{keypadButtonState}}" ng-click="showKeypad()">
+  <span class="ion-calculator" style="flex: 1; "></span>
 </div>
 
 </ion-view>

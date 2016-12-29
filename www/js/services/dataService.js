@@ -13,20 +13,20 @@ angular.module('darknet-hacker')
     $window.localStorage.setItem('darknet-hacker-data', JSON.stringify(service.user));
   }
   service.loadUser = () => {
-    service.user = JSON.parse($window.localStorage.setItem('darknet-hacker-data'));
+    service.user = JSON.parse($window.localStorage.getItem('darknet-hacker-data'));
   }
   service.resetUser = () => {
     service.user = {};
     service.user.name = '';
     service.user.money = {
-      dollars: 0,
+      dollars: 500,
       cryptocoin: 0
     };
     service.user.toolbox = {
-      burnerPhone: 0,
-      speed: 0,
-      disrupt: 0,
-      keylogger: 0
+      burnerPhone: 5,
+      speed: 5,
+      disrupt: 5,
+      keylogger: 5
     };
     service.user.completed = [
       {
@@ -93,6 +93,15 @@ angular.module('darknet-hacker')
       return;
     }
     service.user.toolbox[toolName]--;
+    changeTrigger();
+  }
+  service.updateDollars = (num) => {
+    service.user.money.dollars += num;
+    changeTrigger();
+  }
+  service.updateCryptocoin = (num) => {
+    service.user.money.cryptocoin += num;
+    changeTrigger();
   }
 
   return service;

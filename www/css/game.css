@@ -1,45 +1,93 @@
-#game-level-widget {
+/* ACCOUNT WIDGET */
+#game-account-widget {
   position: absolute;
-  left: 5px;
-  right: 5px;
-  top: 5px;
-  height: 125px;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgb(50,50,50);
+  padding: 20px;
+  height: 100px;
 }
-#game-level-name {
+#game-account-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: auto;
+  background-color: rgb(50,50,50);
+  padding: 15px;
+}
+#game-account-login {
+  position: absolute;
+  left: 110px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  padding: 0px;
+  padding-right: 20px;
+}
+.game-account-label {
+  font-size: 12px;
   color: rgb(150,150,150);
 }
-#game-level-image {
-  height: 90px;
+.game-account-inputs {
+  height: 25px;
+  width: 100%;
+  background-color: white;
+  color: rgb(25,25,25);
+  font-size: 25px;
+  padding: 2px;
+  padding-left: 10px;
+}
+
+/* BANK BALANCE */
+#game-bank-balance-container {
+  position: absolute;
+  background-color: rgb(50,50,50);
+  top: 105px;
+  left: 5px;
+  right: 5px;
+  height: 35px;
+}
+#game-bank-balance-image {
+  position: absolute;
+  margin-top: -7px;
+  top: 0px;
+  left: 0px;
+  height: 50px;
   width: auto;
   padding: 10px;
-  background-color: black;
 }
-#game-level-label {
+#game-bank-balance-content {
   position: absolute;
+  background-color: black;
   top: 5px;
-  left: 100px;
-  font-size: 15px;
-  color: rgb(100,100,100);
+  bottom: 5px;
+  left: 50px;
+  right: 5px;
 }
-#game-level-amount {
+#game-bank-balance-bar {
   position: absolute;
-  top: 30px;
-  left: 100px;
-  bottom: 10px;
-  right: 10px;
-  background-color: black;
-  padding: 17px;
+  background-color: #00cc99;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+#game-bank-balance-bar-amount {
+  position: relative;
+  right: 0;
+  width: 125px;
+  padding: 2px;
   padding-left: 10px;
-  padding-right: 10px;
-  font-size: 30px;
-  color: rgb(0,255,100);
+  font-size: 20px;
+  color: rgb(0,100,0);
 }
 
 /* TRIES WIDGET */
 #game-tries-container {
   position: absolute;
   background-color: rgb(50,50,50);
-  top: 135px;
+  top: 145px;
   left: 5px;
   right: 5px;
   height: 50px;
@@ -71,30 +119,30 @@
   margin-right: 4px;
 }
 
-/* HISTORY LOG */
-#game-history-log {
+/* GAME DRAIN INDICATOR */
+#game-drain-indicator {
   position: absolute;
-  top: 190px;
+  background-color: rgb(50,50,50);
+  top: 105px;
   left: 5px;
-  right: 5px;
-  bottom: 55px;
+  height: 35px;
+  width: 50px;
+  text-align: center;
 }
-#game-history-log-label {
-
-}
-#game-history-log-content {
-  background-color: black;
+#game-drain-image {
+  height: 35px;
+  padding: 5px;
 }
 
 /* TIME LIMIT */
 #game-time-container {
   position: absolute;
   background-color: rgb(50,50,50);
-  top: 175px;
+  top: 125px;
   right: 0px;
   height: 50px;
-  width: 150px;
-  border: 1px solid rgb(150,150,150);
+  width: 110px;
+  border: 1px solid rgb(0,150,255);
 }
 #game-time-icon {
   position: absolute;
@@ -119,12 +167,157 @@
   color: white;
 }
 
-/* GAME TOOLBELT */
-#game-toolbelt {
+/* KEYPAD HISTORY LOG CONTAINER */
+#game-keypad-log-container {
   position: absolute;
-  bottom: 0;
+  display: flex;
+  top: 200px;
+  bottom: 55px;
+  left: 5px;
+  right: 5px;
+}
+
+/* HISTORY LOG */
+#game-history-log {
+  position: relative;
+  flex: 3;
+  margin-right: 2px;
+  border: 2px solid rgb(50,50,50);
+}
+#game-history-log-content {
+  position: absolute;
+  top: 30px;
+}
+.game-history-log-entry {
+  position: relative;
+  margin: 2px;
+  background-color: rgb(25,25,25);
+  padding: 5px;
+}
+.game-history-log-guess {
+  width: 100%;
+  background-color: rgb(50,50,50);
+  padding: 2px;
+  padding-left: 5px;
+  font-size: 25px;
+  color: rgb(0,150,255);
+}
+.game-history-log-row {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: 12px;
+}
+.game-clue-box {
+  position: relative;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  margin: 1px;
+}
+
+/* KEYPAD */
+#game-keypad {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding: 25px;
+  padding: 2px;
+  position: absolute;
+  bottom: 50px;
   left: 0;
   right: 0;
+  top: 100px;
+}
+.game-keypad-row {
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+.game-keypad-key {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  flex: 1;
+  font-size: 40px;
+  margin: 2px;
+  background-color: rgb(25,25,25);
+  padding: 10px;
+  color: rgb(0,150,255);
+}
+.game-keypad-key:active {
+  background-color: rgb(0,150,255);
+  color: black;
+}
+
+/* GAME TOOLBELT */
+#game-toolbelt {
+  background-color: rgb(25,25,25);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border: 2px solid rgb(50,50,50);
+}
+.game-toolbelt-item {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.game-toolbelt-item:active {
+  background-color: rgb(100,100,100);
+}
+.game-toolbelt-tool-image {
+  max-width: 30px;
+  margin-bottom: 2px;
+}
+.game-toolbelt-tool-name {
+  margin-top: -8px;
+  font-size: 12px;
+}
+
+/* DISRUPTED */
+#game-state-disrupted {
+  position: absolute;
+  z-index: 9999;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+  padding: 15px;
+  background-color: rgb(255,50,50);
+  top: 0px;
+  right: 0px;
+}
+
+/* TIME SLOWED */
+#game-state-time {
+  position: absolute;
+  right: 0px;
+  top: 100px;
+  padding: 5px;
+  z-index: 9999;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgb(0,100,255);
+
+}
+
+/* KEYPAD TOGGLE */
+#game-keypad-toggle-button {
+  position: absolute;
+  display: flex;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 50px;
-  background-color: rgb(50,50,50);
+  font-size: 40px;
+  text-align: center;
+  padding: 5px;
+}
+
+#game-keypad-modal {
+  background-color: rgba(0,0,0,0);
+  font-family: square;
 }

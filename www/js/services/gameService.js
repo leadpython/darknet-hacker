@@ -19,43 +19,50 @@ angular.module('darknet-hacker')
     }
   }
   service.generateCode = () => {
-    
+    let length = service.selectedLevel.length;
+    let password = '';
+    for (let i = 0; i < length; i++) {
+      password += Math.floor(Math.random() * 10);
+    }
+
+    service.secretCode = password;
   }
   service.checkCode = (guess) => {
-    let secretCodeArr = secretCode.split('');
+    let secretCodeArr = service.secretCode.split('');
     let guessArr = guess.split('');
     let feedback = {
+      guess: guess,
       green: 0,
       yellow: 0,
+      red: secretCodeArr.length,
       doesItWin: false
     };
-
     // check greens
     for (let i = 0; i < secretCodeArr.length; i++) {
-      if (secretCodeArr[i] === guessArr[i]) {
+      if (secretCodeArr[i] === guessArr[i] && typeof guessArr[i] === 'string') {
         feedback.green++;
+        feedback.red--;
         delete secretCodeArr[i];
         delete guessArr[i];
       }
     }
-
-    if (green = secretCodeArr.length) {
-      feedback.doesItWin = true;
-      return feedback;
-    }
-
     // check yellows
     for (let i = 0; i < secretCodeArr.length; i++) {
       for (let j = 0; j < guessArr.length; j++) {
         if (secretCodeArr[i] && guessArr[j]) {
           if (secretCodeArr[i] === guessArr[j]) {
             feedback.yellow++;
+            feedback.red--;
             delete secretCodeArr[i];
             delete guessArr[j];
           }
         }
       }
     }
+    if (feedback.green === secretCodeArr.length) {
+      feedback.doesItWin = true;
+    }
+    console.log(service.secretCode, feedback);
     return feedback;
   }
 

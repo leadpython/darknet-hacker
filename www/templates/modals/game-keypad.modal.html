@@ -1,0 +1,34 @@
+<ion-modal-view id="game-keypad-modal">
+
+<!-- KEYPAD -->
+<div id="game-keypad">
+  <div class="game-keypad-row">
+    <div class="game-keypad-key" ng-click="keyStroke(7)">7</div>
+    <div class="game-keypad-key" ng-click="keyStroke(8)">8</div>
+    <div class="game-keypad-key" ng-click="keyStroke(9)">9</div>
+  </div>
+  <div class="game-keypad-row">
+    <div class="game-keypad-key" ng-click="keyStroke(4)">4</div>
+    <div class="game-keypad-key" ng-click="keyStroke(5)">5</div>
+    <div class="game-keypad-key" ng-click="keyStroke(6)">6</div>
+  </div>
+  <div class="game-keypad-row">
+    <div class="game-keypad-key" ng-click="keyStroke(1)">1</div>
+    <div class="game-keypad-key" ng-click="keyStroke(2)">2</div>
+    <div class="game-keypad-key" ng-click="keyStroke(3)">3</div>
+  </div>
+  <div class="game-keypad-row">
+    <div class="game-keypad-key" ng-click="keyStroke(0)">0</div>
+  </div>
+  <div class="game-keypad-row">
+    <div class="game-keypad-key" style="font-size: 25px;" ng-click="deleteAll()">delete</div>
+    <div class="game-keypad-key" style="font-size: 25px;" ng-click="backspace()">backspace</div>
+  </div>
+  <div class="game-keypad-row">
+    <div class="game-keypad-key" style="font-size: 25px;" ng-click="enter()">enter</div>
+  </div>
+</div>
+
+<div style="position: absolute; height: 50px; left: 0; right: 0; bottom: 0;" ng-click="hideKeypad()"></div>
+
+</ion-modal-view>

@@ -43,13 +43,16 @@ angular.module('darknet-hacker')
   $scope.hideLevelModal = () => {
     $scope.levelModal.hide();
   }
+
+  // MODALS
   // Modal shown when checking for level details
   $ionicModal.fromTemplateUrl('../../templates/modals/level-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
-  }).then(function(modal) {
+  }).then((modal) => {
     $scope.levelModal = modal;
   });
+  // Loading modal
   $ionicModal.fromTemplateUrl('../../templates/modals/loading-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
