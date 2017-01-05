@@ -4,12 +4,10 @@
 <div class="widget-box" id="dashboard-profile-widget">
   <div class="widget-box-header">hacker profile</div>
   <div class="widget-box-content" id="dashboard-profile-content">
-      <img id="dashboard-profile-image" src="../../img/darknet-hacker.png">
+      <img id="dashboard-profile-image" src="./img/darknet-hacker.png">
       <div id="dashboard-profile-details">
         <div class="dashboard-profile-details-label"><u>codename:</u></div>
         <div class="dashboard-profile-details-info">leadpython</div>
-        <div class="dashboard-profile-details-label"><u>reputation:</u></div>
-        <div class="dashboard-profile-details-info">legend</div>
       </div>
   </div>
 </div>
@@ -18,7 +16,7 @@
 <div class="widget-box" id="dashboard-bank-widget">
   <div class="widget-box-header">bank account</div>
   <div class="widget-box-content" id="dashboard-bank-content">
-    <div id="dashboard-bank-balance">$ 100,000,000.00</div>
+    <div id="dashboard-bank-balance">$ {{getPlayerDollars()}}.00</div>
   </div>
 </div>
 
@@ -26,7 +24,7 @@
 <div class="widget-box" id="dashboard-cryptocoin-widget">
   <div class="widget-box-header">cryptocoins</div>
   <div class="widget-box-content" id="dashboard-cryptocoin-content">
-    <div id="dashboard-cryptocoin-balance">1</div>
+    <div id="dashboard-cryptocoin-balance">{{getPlayerCryptocoin()}}</div>
   </div>
 </div>
 
@@ -48,21 +46,21 @@
 <div id="dashboard-command-center">
   <div style="display: flex;">
     <div class="dashboard-command" ng-click="goTo('level')">
-      <img class="dashboard-command-image" src="../../img/hack.png">
+      <img class="dashboard-command-image" src="./img/hack.png">
       <div class="dashboard-command-label">hack targets</div>
     </div>
     <div class="dashboard-command">
-      <img class="dashboard-command-image" src="../../img/market.png">
+      <img class="dashboard-command-image" src="./img/market.png">
       <div class="dashboard-command-label">black market</div>
     </div>
   </div>
   <div style="display: flex;">
     <div class="dashboard-command">
-      <img class="dashboard-command-image" src="../../img/manual.png">
+      <img class="dashboard-command-image" src="./img/manual.png">
       <div class="dashboard-command-label">hacker manual</div>
     </div>
     <div class="dashboard-command">
-      <img class="dashboard-command-image" src="../../img/options.png">
+      <img class="dashboard-command-image" src="./img/options.png">
       <div class="dashboard-command-label">options</div>
     </div>
   </div>

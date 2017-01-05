@@ -3,7 +3,7 @@ angular.module('darknet-hacker')
 .controller('gameController', function($scope, $timeout, $ionicModal, $location, $interval, gameService, dataService) {
   $scope.$on('$ionicView.enter', () => {
     // for testing purposes
-    dataService.resetUser();
+    // dataService.resetUser();
     $scope.gameOptions = {
       name: '',
       imageUrl: '',
@@ -122,7 +122,30 @@ angular.module('darknet-hacker')
       done: false
     }
     $scope.playerGuess = '';
+    $scope.playerFunds = dataService.user.money.dollars;
     $scope.historyLog = [];
+  }
+
+  // DRAIN OFFENSE
+  $scope.initiateDrainOffense = (e) => {
+    if (e.target.style.background === 'red') {
+      return;
+    }
+    e.target.style.background = 'red';
+    let decrement = Math.floor($scope.gameOptions.reward * 0.01);
+    $scope.drainOffenseAnimation = $interval(() => {
+      $scope.playerFunds += decrement;
+      $scope.gameOptions.reward -= decrement;
+      if ($scope.gameOptions.reward <= 0) {
+        $scope.gameOptions.reward = 0;
+        $timeout(() => {
+          $scope.winModal.hide();
+          e.target.style.background = '#00cc99';
+          $location.path('/dashboard');
+        }, 500);
+        $interval.cancel($scope.drainOffenseAnimation);
+      }
+    }, 20);
   }
 
   // LEVEL DEFENSES
@@ -207,20 +230,21 @@ angular.module('darknet-hacker')
 
   // MODALS
   // Win modal 
-  $ionicModal.fromTemplateUrl('../../templates/modals/game-win.modal.html', {
+  $ionicModal.fromTemplateUrl('./templates/modals/game-win.modal.html', {
     scope: $scope
   }).then((modal) => {
     $scope.winModal = modal;
   });
   // Loss modal 
-  $ionicModal.fromTemplateUrl('../../templates/modals/game-loss.modal.html', {
+  $ionicModal.fromTemplateUrl('./templates/modals/game-loss.modal.html', {
     scope: $scope
   }).then((modal) => {
     $scope.lossModal = modal;
   });
   // Keypad modal 
-  $ionicModal.fromTemplateUrl('../../templates/modals/game-keypad.modal.html', {
-    scope: $scope
+  $ionicModal.fromTemplateUrl('./templates/modals/game-keypad.modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
   }).then((modal) => {
     $scope.keypadModal = modal;
   });

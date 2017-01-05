@@ -5,7 +5,7 @@
   <img id="game-account-image" src="{{gameOptions.imageUrl}}">
   <div id="game-account-login">
     <div class="game-account-label"><u>username:</u></div>
-    <div class="game-account-inputs" style="background-color: rgb(75,75,75);">victim12345</div>
+    <div class="game-account-inputs" style="background-color: rgb(75,75,75); color: rgb(25,25,25);">victim12345</div>
     <div class="game-account-label"><u>password:</u></div>
     <div class="game-account-inputs">{{playerGuess}}</div>
   </div>
@@ -13,7 +13,7 @@
 
 <!-- BANK BALANCE -->
 <div id="game-bank-balance-container">
-  <img id="game-bank-balance-image" src="../../img/account.png">
+  <img id="game-bank-balance-image" src="./img/account.png">
   <div id="game-bank-balance-content">
     <div id="game-bank-balance-bar" style="width: {{getRewardLeftPercentage() + '%'}}"><div id="game-bank-balance-bar-amount">$ {{gameOptions.reward}}.00</div></div>
   </div>
@@ -21,12 +21,12 @@
 
 <!-- DRAIN INDICATOR -->
 <div id="game-drain-indicator" ng-if="shouldDrainShow()">
-  <img id="game-drain-image" src="../../img/darknet.png">
+  <img id="game-drain-image" src="./img/darknet.png">
 </div>
 
 <!-- TRIES WIDGET -->
 <div id="game-tries-container">
-  <img id="game-tries-icon" src="../../img/burner.png">
+  <img id="game-tries-icon" src="./img/burner.png">
   <div id="game-tries-content">
     <div class="game-tries-box" ng-repeat="box in getTryBoxes() track by $index"></div>
   </div>
@@ -34,59 +34,54 @@
 
 <!-- TIME LIMIT -->
 <div id="game-time-container" ng-if="shouldTimeLimitShow()">
-  <img id="game-time-icon" src="../../img/triangulate.png">
+  <img id="game-time-icon" src="./img/triangulate.png">
   <div id="game-time-content">
     {{gameOptions.timeLimit}}
   </div>
 </div>
 
-<!-- TOOLBOX & HISTORY LOG -->
-<div id="game-keypad-log-container">
-
-  <!-- HISTORY LOG-->
-  <div id="game-history-log">
-    <div class="widget-box-header">history log</div>
-    <ion-content id="game-history-log-content">
-      <div class="game-history-log-entry" ng-repeat="log in historyLog track by $index">
-        <div class="game-history-log-guess">{{log.guess}}</div>
-        <div class="game-history-log-row">
-          <span class="game-clue-box" style="background-color: green;" ng-repeat="box in generateClueBoxes(log.green) track by $index">
-          </span>
-        </div>
-        <div class="game-history-log-row">
-          <span class="game-clue-box" style="background-color: yellow;" ng-repeat="box in generateClueBoxes(log.yellow) track by $index">
-          </span>
-        </div>
-        <div class="game-history-log-row">
-          <span class="game-clue-box" style="background-color: red;" ng-repeat="box in generateClueBoxes(log.red) track by $index">
-          </span>
-        </div>
+<!-- HISTORY LOG-->
+<div id="game-history-log">
+  <div class="widget-box-header">history log</div>
+  <ion-content id="game-history-log-content">
+    <div class="game-history-log-entry" ng-repeat="log in historyLog track by $index">
+      <div class="game-history-log-guess">{{log.guess}}</div>
+      <div class="game-history-log-row">
+        <span class="game-clue-box" style="background-color: green;" ng-repeat="box in generateClueBoxes(log.green) track by $index">
+        </span>
       </div>
-    </ion-content>
-  </div>
-
-
-  <!-- TOOLBELT -->
-  <div id="game-toolbelt">
-    <div class="game-toolbelt-item" style="border: none;" ng-click="activateBurnerPhone()">
-      <img class="game-toolbelt-tool-image" src="../../img/burner.png">
-      <div class="game-toolbelt-tool-name">burner phone</div>
+      <div class="game-history-log-row">
+        <span class="game-clue-box" style="background-color: yellow;" ng-repeat="box in generateClueBoxes(log.yellow) track by $index">
+        </span>
+      </div>
+      <div class="game-history-log-row">
+        <span class="game-clue-box" style="background-color: red;" ng-repeat="box in generateClueBoxes(log.red) track by $index">
+        </span>
+      </div>
     </div>
-    <div class="game-toolbelt-item" style="border-top: 1px solid rgb(50,50,50)" ng-click="activateDisruption()">
-      <img class="game-toolbelt-tool-image" src="../../img/disrupt.png">
-      <div class="game-toolbelt-tool-name">disrupt</div>
-    </div>
-    <div class="game-toolbelt-item" style="border-top: 1px solid rgb(50,50,50)" ng-click="activateSpeed()">
-      <img class="game-toolbelt-tool-image" src="../../img/speed.png">
-      <div class="game-toolbelt-tool-name">speed</div>
-    </div>
-    <div class="game-toolbelt-item" style="border-top: 1px solid rgb(50,50,50)" ng-click="activateKeylogger()">
-      <img class="game-toolbelt-tool-image" src="../../img/keylogger.png">
-      <div class="game-toolbelt-tool-name">keylogger</div>
-    </div>
-  </div>
-
+  </ion-content>
 </div>
+
+
+<!-- TOOLBELT -->
+<ion-content id="game-toolbelt">
+  <div class="game-toolbelt-item" ng-click="activateBurnerPhone()">
+    <img class="game-toolbelt-tool-image" src="./img/burner.png">
+    <div class="game-toolbelt-tool-name">burner phone</div>
+  </div>
+  <div class="game-toolbelt-item" ng-click="activateDisruption()">
+    <img class="game-toolbelt-tool-image" src="./img/disrupt.png">
+    <div class="game-toolbelt-tool-name">disrupt</div>
+  </div>
+  <div class="game-toolbelt-item" ng-click="activateSpeed()">
+    <img class="game-toolbelt-tool-image" src="./img/speed.png">
+    <div class="game-toolbelt-tool-name">speed</div>
+  </div>
+  <div class="game-toolbelt-item" ng-click="activateKeylogger()">
+    <img class="game-toolbelt-tool-image" src="./img/keylogger.png">
+    <div class="game-toolbelt-tool-name">keylogger</div>
+  </div>
+</ion-content>
 
 <!-- DISRUPTED -->
 <div id="game-state-disrupted" ng-if="gameState.disrupted">defenses disabled</div>

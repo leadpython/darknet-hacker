@@ -22,9 +22,9 @@
   background-color: rgb(150,150,150);
 }
 .widget-box {
-  border: 5px solid rgb(50,50,50);
+  border: 5px solid rgb(25,25,25);
   border-top: 0;
-  background-color: rgb(50,50,50);
+  background-color: rgb(25,25,25);
 }
 .widget-box-header {
   position: absolute;
@@ -35,7 +35,7 @@
   font-size: 20px;
   padding: 5px;
   height: 30px;
-  background-color: rgb(50,50,50);
+  background-color: rgb(25,25,25);
   font-size: 15px;
 }
 .widget-box-content {

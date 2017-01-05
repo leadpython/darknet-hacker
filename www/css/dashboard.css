@@ -8,23 +8,25 @@
   left: 5px;
   right: 5px;
   top: 5px;
-  height: 125px;
+  height: 110px;
   padding: 10px;
 }
 #dashboard-profile-content {
 }
 #dashboard-profile-image {
   padding: 10px;
-  height: 90px;
+  height: 75px;
   width: auto;
+  border: 1px solid rgb(50,50,50);
+  background-color: black;
 }
 #dashboard-profile-details {
   position: absolute;
   top: 5px;
   bottom: 5px;
-  left: 90px;
+  left: 80px;
   right: 5px;
-  line-height: 18px;
+  line-height: 25px;
   padding-left: 5px;
 }
 .dashboard-profile-details-label {
@@ -32,8 +34,9 @@
   font-size: 12px;
 }
 .dashboard-profile-details-info {
-  font-size: 20px;
-  padding-left: 20px;
+  font-size: 25px;
+  padding-left: 10px;
+  border-bottom: 1px solid rgb(50,50,50);
 }
 
 /* BANK WIDGET */
@@ -44,7 +47,7 @@
   position: absolute;
   left: 5px;
   right: 110px;
-  top: 135px;
+  top: 120px;
   height: 75px;
   padding: 10px;
 }
@@ -60,7 +63,7 @@
   position: absolute;
   width: 100px;
   right: 5px;
-  top: 135px;
+  top: 120px;
   height: 75px;
   padding: 10px;
 }
@@ -78,7 +81,7 @@
   position: absolute;
   left: 5px;
   right: 5px;
-  top: 215px;
+  top: 200px;
   bottom: 150px;
   padding: 10px;
 }

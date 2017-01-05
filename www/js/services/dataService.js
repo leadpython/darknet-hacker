@@ -9,6 +9,12 @@ angular.module('darknet-hacker')
 
   service.user = {};
 
+  service.initialize = () => {
+    service.loadUser();
+    if (service.user === null || service.user === undefined) {
+      service.resetUser();
+    }
+  }
   service.saveUser = () => {
     $window.localStorage.setItem('darknet-hacker-data', JSON.stringify(service.user));
   }
@@ -103,6 +109,8 @@ angular.module('darknet-hacker')
     service.user.money.cryptocoin += num;
     changeTrigger();
   }
+
+  service.initialize();
 
   return service;
 })

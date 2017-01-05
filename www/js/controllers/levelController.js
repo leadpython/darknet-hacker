@@ -1,6 +1,6 @@
 angular.module('darknet-hacker')
 
-.controller('levelController', function($scope, $interval, $location, levelService, $ionicModal, gameService) {
+.controller('levelController', function($scope, $interval, $location, dataService, levelService, $ionicModal, gameService) {
   $scope.goTo = (location) => {
     $location.path('/' + location);
   }
@@ -46,14 +46,14 @@ angular.module('darknet-hacker')
 
   // MODALS
   // Modal shown when checking for level details
-  $ionicModal.fromTemplateUrl('../../templates/modals/level-modal.html', {
+  $ionicModal.fromTemplateUrl('./templates/modals/level-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
   }).then((modal) => {
     $scope.levelModal = modal;
   });
   // Loading modal
-  $ionicModal.fromTemplateUrl('../../templates/modals/loading-modal.html', {
+  $ionicModal.fromTemplateUrl('./templates/modals/loading-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
   }).then((modal) => {
