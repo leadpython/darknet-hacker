@@ -4,8 +4,6 @@
 <div id="game-account-widget">
   <img id="game-account-image" src="{{gameOptions.imageUrl}}">
   <div id="game-account-login">
-    <div class="game-account-label"><u>username:</u></div>
-    <div class="game-account-inputs" style="background-color: rgb(75,75,75); color: rgb(25,25,25);">victim12345</div>
     <div class="game-account-label"><u>password:</u></div>
     <div class="game-account-inputs">{{playerGuess}}</div>
   </div>
@@ -49,12 +47,8 @@
       <div class="game-history-log-row">
         <span class="game-clue-box" style="background-color: green;" ng-repeat="box in generateClueBoxes(log.green) track by $index">
         </span>
-      </div>
-      <div class="game-history-log-row">
         <span class="game-clue-box" style="background-color: yellow;" ng-repeat="box in generateClueBoxes(log.yellow) track by $index">
         </span>
-      </div>
-      <div class="game-history-log-row">
         <span class="game-clue-box" style="background-color: red;" ng-repeat="box in generateClueBoxes(log.red) track by $index">
         </span>
       </div>
@@ -89,7 +83,7 @@
 <div id="game-state-time" ng-if="gameState.slowed">time is slow</div>
 
 
-<div id="game-keypad-toggle-button" style="{{keypadButtonState}}" ng-click="showKeypad()">
+<div id="game-keypad-toggle-button" ng-click="showKeypad()">
   <span class="ion-calculator" style="flex: 1; "></span>
 </div>
 

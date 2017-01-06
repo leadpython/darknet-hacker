@@ -34,7 +34,6 @@ angular.module('darknet-hacker')
   }
   $scope.showKeypad = () => {
     $scope.keypadModal.show();
-    $scope.keypadButtonState = 'color: black; background-color: #00cc99;';
   };
   $scope.hideKeypad = () => {
     $scope.keypadModal.hide();
@@ -193,6 +192,9 @@ angular.module('darknet-hacker')
     if ($scope.gameState.done) {
       return;
     }
+    if (dataService.user.toolbox.disrupt <= 0) {
+      return;
+    }
     stopDefenseAnimations();
     $scope.gameState.disrupted = true;
     $timeout(() => {
@@ -206,6 +208,9 @@ angular.module('darknet-hacker')
     if ($scope.gameState.done) {
       return;
     }
+    if (dataService.user.toolbox.speed <= 0) {
+      return;
+    }
     stopDefenseAnimations();
     $scope.gameState.slowed = true;
     $scope.gameOptions.timeSpeedMultiplier = 2;
@@ -217,12 +222,18 @@ angular.module('darknet-hacker')
     if ($scope.gameState.done) {
       return;
     }
+    if (dataService.user.toolbox.burnerPhone <= 0) {
+      return;
+    }
     $scope.gameOptions.tries++;
     dataService.useTool('burnerPhone');
   }
   // when player uses keylogger
   $scope.activateKeylogger = () => {
     if ($scope.gameState.done) {
+      return;
+    }
+    if (dataService.user.toolbox.keylogger <= 0) {
       return;
     }
     dataService.useTool('keylogger');
@@ -248,4 +259,9 @@ angular.module('darknet-hacker')
   }).then((modal) => {
     $scope.keypadModal = modal;
   });
+
+  $scope.disconnect = () => {
+    $scope.lossModal.hide();
+    $location.path('/dashboard');
+  }
 })

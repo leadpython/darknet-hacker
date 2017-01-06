@@ -21,14 +21,15 @@
     <div class="game-keypad-key" ng-click="keyStroke(0)">0</div>
   </div>
   <div class="game-keypad-row">
-    <div class="game-keypad-key" style="font-size: 20px;" ng-click="deleteAll()">clear</div>
-    <div class="game-keypad-key" style="font-size: 20px;" ng-click="backspace()">backspace</div>
+    <div class="game-keypad-key" style="font-size: 15px;" ng-click="deleteAll()">clear</div>
+    <div class="game-keypad-key" style="font-size: 15px;" ng-click="backspace()">backspace</div>
   </div>
   <div class="game-keypad-row">
-    <div class="game-keypad-key" style="font-size: 20px;" ng-click="enter()">enter</div>
+    <div class="game-keypad-key" style="font-size: 15px;" ng-click="enter()">enter</div>
+  </div>
+  <div class="game-keypad-row">
+    <div class="game-keypad-key" style="font-size: 15px;" ng-click="hideKeypad()">close</div>
   </div>
 </div>
-
-<div style="position: absolute; height: 50px; left: 0; right: 0; bottom: 0;" ng-click="hideKeypad()"></div>
 
 </ion-modal-view>
