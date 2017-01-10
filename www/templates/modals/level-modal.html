@@ -4,9 +4,9 @@
   <img id="level-modal-selected-level-image" src="{{selectedLevel.imageUrl}}" >
   <div id="level-modal-selected-level-economics">
     <div class="level-modal-selected-level-economics-label"><u>reward:</u></div>
-    <div class="level-modal-selected-level-economics-amount">$ {{selectedLevel.reward}}.00</div>
+    <div class="level-modal-selected-level-economics-amount">$ {{commafy(selectedLevel.reward)}}.00</div>
     <div class="level-modal-selected-level-economics-label"><u>cost:</u></div>
-    <div class="level-modal-selected-level-economics-amount">$ {{selectedLevel.reward/5}}.00</div>
+    <div class="level-modal-selected-level-economics-amount">$ {{commafy(selectedLevel.reward/5)}}.00</div>
   </div>
   <div id="level-modal-selected-level-details">
     password length: {{selectedLevel.length}} <br>

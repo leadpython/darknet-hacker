@@ -90,7 +90,7 @@ angular.module('darknet-hacker')
   }
   // check if level is completed
   service.checkLevel = (index) => {
-    return service.user.completed[index-1].normal && service.user.completed[index-1].triangulation && service.user.completed[index-1].normal && true; 
+    return service.user.completed[index-1].normal && service.user.completed[index-1].triangulation && service.user.completed[index-1].darknet && true; 
   }
   // when a tool is used
   service.useTool = (toolName) => {
