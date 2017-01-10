@@ -173,7 +173,7 @@
   position: absolute;
   top: 200px;
   left: 5px;
-  bottom: 55px;
+  bottom: 5px;
   right: 110px;
   border: 2px solid rgb(25,25,25);
 }
@@ -233,7 +233,7 @@
   text-align: center;
   display: inline-block;
   flex: 1;
-  font-size: 25px;
+  font-size: 20px;
   margin: 2px;
   background-color: rgb(25,25,25);
   padding: 10px;
@@ -262,6 +262,7 @@
   padding: 10px;
   padding-left: 0;
   padding-right: 0;
+  position: relative;
 }
 .game-toolbelt-item:active {
   background-color: rgb(100,100,100);
@@ -273,6 +274,14 @@
 .game-toolbelt-tool-name {
   margin-top: -8px;
   font-size: 10px;
+}
+.game-toolbelt-tool-quantity {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px;
+  font-size: 25px;
+  color: rgb(150,150,150);
 }
 
 /* DISRUPTED */

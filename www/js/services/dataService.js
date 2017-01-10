@@ -36,63 +36,62 @@ angular.module('darknet-hacker')
     };
     service.user.completed = [
       {
-        normal: 0,
-        triangulation: 0,
-        darknet: 0,
-        completed: false
+        normal: false,
+        triangulation: false,
+        darknet: false
       },
       {
-        normal: 0,
-        triangulation: 0,
-        darknet: 0,
-        completed: false
+        normal: false,
+        triangulation: false,
+        darknet: false
       },
       {
-        normal: 0,
-        triangulation: 0,
-        darknet: 0,
-        completed: false
+        normal: false,
+        triangulation: false,
+        darknet: false
       },
       {
-        normal: 0,
-        triangulation: 0,
-        darknet: 0,
-        completed: false
+        normal: false,
+        triangulation: false,
+        darknet: false
       },
       {
-        normal: 0,
-        triangulation: 0,
-        darknet: 0,
-        completed: false
+        normal: false,
+        triangulation: false,
+        darknet: false
       },
       {
-        normal: 0,
-        triangulation: 0,
-        darknet: 0,
-        completed: false
+        normal: false,
+        triangulation: false,
+        darknet: false
       },
       {
-        normal: 0,
-        triangulation: 0,
-        darknet: 0,
-        completed: false
+        normal: false,
+        triangulation: false,
+        darknet: false
       },
       {
-        normal: 0,
-        triangulation: 0,
-        darknet: 0,
-        completed: false
+        normal: false,
+        triangulation: false,
+        darknet: false
       },
       {
-        normal: 0,
-        triangulation: 0,
-        darknet: 0,
-        completed: false
+        normal: false,
+        triangulation: false,
+        darknet: false
       }
     ];
     service.saveUser();
   }
 
+  // upon win, update
+  service.uponLevelComplete = (index, mode) => {
+    service.user.completed[index][mode] = true;
+  }
+  // check if level is completed
+  service.checkLevel = (index) => {
+    return service.user.completed[index-1].normal && service.user.completed[index-1].triangulation && service.user.completed[index-1].normal && true; 
+  }
   // when a tool is used
   service.useTool = (toolName) => {
     if (service.user.toolbox[toolName] <= 0) {

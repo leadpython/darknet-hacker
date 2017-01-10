@@ -12,8 +12,17 @@
 
 /* LEVELS SELECTION */
 .levels-level-container {
+  position: relative;
   margin: 10px;
   position: relative;
+}
+.level-lock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(25,25,25,0.95);
 }
 .levels-level-item {
   position: relative;

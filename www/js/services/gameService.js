@@ -4,8 +4,9 @@ angular.module('darknet-hacker')
   let service = {};
   service.selectedLevel = {};
   service.secretCode = 0;
-  service.setLevel = (level) => {
+  service.setLevel = (level, index) => {
     service.selectedLevel = level;
+    service.selectedLevel.levelIndex = index;
     switch (service.selectedLevel.mode) {
       case 'normal':
         service.selectedLevel.reward = service.selectedLevel.reward * 1;

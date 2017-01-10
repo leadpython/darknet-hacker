@@ -18,7 +18,7 @@ angular.module('darknet-hacker')
     }
   }
   $scope.setLevel = (level) => {
-    gameService.setLevel(level);
+    gameService.setLevel(level, $scope.selectedLevel.indexLevel);
     $scope.hideLevelModal();
     $scope.loadingBarProgress = 0;
     $scope.startLoadingWindow();
@@ -35,15 +35,27 @@ angular.module('darknet-hacker')
       }
     }, 20);
   }
-  $scope.selectLevel = (level, mode) => {
+  $scope.selectLevel = (level, mode, index) => {
     $scope.selectedLevel = level;
     $scope.selectedLevel.mode = mode;
+    $scope.selectedLevel.indexLevel = index;
     $scope.levelModal.show();
   }
   $scope.hideLevelModal = () => {
     $scope.levelModal.hide();
   }
 
+  // check level
+  $scope.checkLevel = (index) => {
+    if (index === 0) {
+      return false;
+    }
+    return !(dataService.checkLevel(index));
+  }
+  // check mode
+  $scope.checkMode = (index, mode) => {
+    return dataService.user.completed[index][mode];
+  }
   // MODALS
   // Modal shown when checking for level details
   $ionicModal.fromTemplateUrl('./templates/modals/level-modal.html', {

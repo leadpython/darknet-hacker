@@ -6,15 +6,16 @@
       <div class="levels-level-name">{{$index+1}} | {{level.name}}</div>
       <img class="levels-level-image" src="{{level.imageUrl}}">
       <div class="levels-level-modes">
-        <div class="levels-level-mode" ng-click="selectLevel(level, 'normal')">normal mode
-      <div class="ion-checkmark-circled levels-level-completed"></div></div>
-        <div class="levels-level-mode" ng-click="selectLevel(level, 'triangulation')">triangulation mode
-      <div class="ion-checkmark-circled levels-level-completed"></div></div>
-        <div class="levels-level-mode" ng-click="selectLevel(level, 'darknet')">dark.net mode
-      <div class="ion-checkmark-circled levels-level-completed"></div></div>
+        <div class="levels-level-mode" ng-click="selectLevel(level, 'normal', $index)">normal mode
+      <div class="ion-checkmark-circled levels-level-completed" ng-if="checkMode($index, 'normal')"></div></div>
+        <div class="levels-level-mode" ng-click="selectLevel(level, 'triangulation', $index)">triangulation mode
+      <div class="ion-checkmark-circled levels-level-completed" ng-if="checkMode($index, 'triangulation')"></div></div>
+        <div class="levels-level-mode" ng-click="selectLevel(level, 'darknet', $index)">dark.net mode
+      <div class="ion-checkmark-circled levels-level-completed" ng-if="checkMode($index, 'darknet')"></div></div>
       </div>
       <div></div>
     </div>
+    <div class="level-lock" ng-if="checkLevel($index)"></div>
   </div>
 </ion-content>
 

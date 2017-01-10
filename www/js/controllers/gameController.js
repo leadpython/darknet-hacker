@@ -54,6 +54,9 @@ angular.module('darknet-hacker')
   $scope.getRewardLeftPercentage = () => {
     return $scope.gameOptions.reward / $scope.gameOptions.maxReward * 100;
   }
+  $scope.getToolQuantity = (tool) => {
+    return dataService.user.toolbox[tool];
+  }
   $scope.keyStroke = (num) => {
     $scope.playerGuess += num + '';
   }
@@ -93,6 +96,7 @@ angular.module('darknet-hacker')
     $scope.gameState.done = true;
     stopDefenseAnimations();
     $scope.winModal.show();
+    dataService.uponLevelComplete(gameService.selectedLevel.levelIndex, $scope.gameOptions.mode);
     dataService.updateDollars($scope.gameOptions.reward);
   }
   function triggerLoss() {

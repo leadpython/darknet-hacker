@@ -46,10 +46,10 @@
       <div class="game-history-log-guess">{{log.guess}}</div>
       <div class="game-history-log-row">
         <span class="game-clue-box" style="background-color: green;" ng-repeat="box in generateClueBoxes(log.green) track by $index">
-        </span>
-        <span class="game-clue-box" style="background-color: yellow;" ng-repeat="box in generateClueBoxes(log.yellow) track by $index">
-        </span>
-        <span class="game-clue-box" style="background-color: red;" ng-repeat="box in generateClueBoxes(log.red) track by $index">
+        </span><!--
+        --><span class="game-clue-box" style="background-color: yellow;" ng-repeat="box in generateClueBoxes(log.yellow) track by $index">
+        </span><!--
+        --><span class="game-clue-box" style="background-color: red;" ng-repeat="box in generateClueBoxes(log.red) track by $index">
         </span>
       </div>
     </div>
@@ -62,18 +62,22 @@
   <div class="game-toolbelt-item" ng-click="activateBurnerPhone()">
     <img class="game-toolbelt-tool-image" src="./img/burner.png">
     <div class="game-toolbelt-tool-name">burner phone</div>
+    <div class="game-toolbelt-tool-quantity">{{getToolQuantity('burnerPhone')}}</div>
   </div>
   <div class="game-toolbelt-item" ng-click="activateDisruption()">
     <img class="game-toolbelt-tool-image" src="./img/disrupt.png">
     <div class="game-toolbelt-tool-name">disrupt</div>
+    <div class="game-toolbelt-tool-quantity">{{getToolQuantity('disrupt')}}</div>
   </div>
   <div class="game-toolbelt-item" ng-click="activateSpeed()">
     <img class="game-toolbelt-tool-image" src="./img/speed.png">
     <div class="game-toolbelt-tool-name">speed</div>
+    <div class="game-toolbelt-tool-quantity">{{getToolQuantity('speed')}}</div>
   </div>
   <div class="game-toolbelt-item" ng-click="activateKeylogger()">
     <img class="game-toolbelt-tool-image" src="./img/keylogger.png">
     <div class="game-toolbelt-tool-name">keylogger</div>
+    <div class="game-toolbelt-tool-quantity">{{getToolQuantity('keylogger')}}</div>
   </div>
 </ion-content>
 
