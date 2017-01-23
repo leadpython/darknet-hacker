@@ -1,0 +1,67 @@
+#market-product-list {
+  position: absolute;
+  background-color: rgb(25,25,25);
+  top: 85px;
+  bottom: 45px;
+  left: 5px;
+  right: 5px;
+  padding: 5px;
+}
+.market-product-list-row {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.market-product-item {
+  position: relative;
+  background-color: rgb(50,50,50);
+  height: 200px;
+  flex: 1;
+  margin: 2px;
+  padding: 5px;
+  text-align: center;
+}
+.market-product-item-image {
+  position: relative;
+  background-color: rgb(25,25,25);
+  height: 25vw;
+  padding: 10px;
+}
+.market-product-item-price {
+  width: 100%;
+  padding-top: 3px;
+  padding-left: 5px;
+  font-size: 20px;
+  color: black;
+  background-color: rgba(255,100,100,0.95);
+}
+.market-product-item-name {
+  font-size: 15px;
+  padding-top: 3px;
+  color: #00cc99;
+  line-height: 15px;
+}
+.market-product-item-description {
+  position: absolute;
+  padding: 2px;
+  color: rgb(125,125,125);
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  top: 145px;
+  font-size: 12px;
+  line-height: 12px;
+}
+.market-product-item-buy {
+  color: black;
+  background-color: #00cc99;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  text-align: center;
+}
+.market-product-item-buy:active {
+  color: #00cc99;
+  background-color: black;
+}

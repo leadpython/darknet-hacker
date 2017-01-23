@@ -9,13 +9,13 @@ angular.module('darknet-hacker')
     service.selectedLevel.levelIndex = index;
     switch (service.selectedLevel.mode) {
       case 'normal':
-        service.selectedLevel.reward = service.selectedLevel.reward * 1;
+        service.selectedLevel.totalReward = service.selectedLevel.reward * 1;
         break;
       case 'triangulation':
-        service.selectedLevel.reward = service.selectedLevel.reward * 2;
+        service.selectedLevel.totalReward = service.selectedLevel.reward * 2;
         break;
       case 'darknet':
-        service.selectedLevel.reward = service.selectedLevel.reward * 5;
+        service.selectedLevel.totalReward = service.selectedLevel.reward * 5;
         break;
     }
   }

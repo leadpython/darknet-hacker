@@ -110,10 +110,10 @@ angular.module('darknet-hacker')
   function setGameOptions() {
     gameService.generateCode();
     $scope.gameOptions.mode = gameService.selectedLevel.mode;
-    $scope.gameOptions.reward = gameService.selectedLevel.reward;
+    $scope.gameOptions.reward = gameService.selectedLevel.totalReward;
     $scope.gameOptions.name = gameService.selectedLevel.name;
     $scope.gameOptions.imageUrl = gameService.selectedLevel.imageUrl;
-    $scope.gameOptions.maxReward = gameService.selectedLevel.reward;
+    $scope.gameOptions.maxReward = gameService.selectedLevel.totalReward;
   }
 
   // initialize game variables

@@ -82,7 +82,7 @@
   left: 5px;
   right: 5px;
   top: 200px;
-  bottom: 150px;
+  bottom: 60px;
   padding: 10px;
 }
 #dashboard-toolbox-content {
@@ -115,10 +115,10 @@
 #dashboard-command-center {
   position: absolute;
   bottom: 0px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  height: 140px;
+  left: 0px;
+  right: 0px;
+  height: 55px;
+  display: flex;
 }
 .dashboard-command {
   flex: 1;
@@ -126,17 +126,16 @@
   text-align: center;
   padding: 10px;
   background-color: rgb(25,25,25);
-  margin: 2px;
   height: 65px;
 }
 .dashboard-command:active {
   background-color: rgb(100,100,100);
 }
 .dashboard-command-image {
-  height: 30px;;
+  height: 25px;;
   width: auto;
 }
 .dashboard-command-label {
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 10px;
+  line-height: 10px;
 }

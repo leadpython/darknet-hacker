@@ -30,5 +30,15 @@ angular.module('darknet-hacker', ['ionic'])
       templateUrl: 'templates/pages/game.html',
       controller: 'gameController'
     })
+    .state('options', {
+      url: '/options',
+      templateUrl: 'templates/pages/options.html',
+      controller: 'optionsController'
+    })
+    .state('market', {
+      url: '/market',
+      templateUrl: 'templates/pages/market.html',
+      controller: 'marketController'
+    })
   $urlRouterProvider.otherwise('/dashboard');
 });

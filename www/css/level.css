@@ -22,7 +22,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(25,25,25,0.95);
+  background-color: rgba(25,25,25,1);
 }
 .levels-level-item {
   position: relative;
