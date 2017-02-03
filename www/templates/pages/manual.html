@@ -1,0 +1,18 @@
+<ion-view id="manual-page">
+  <ion-content id="manual-navbar">
+    <div class="manual-task" ng-repeat="task in tasks track by $index" ng-click="selectTask($index)">
+      {{task.title}}
+    </div>
+  </ion-content>
+
+  <div class="manual-task-animation">
+    <div class="manual-task-image-container">
+      <img src="{{taskImageUrl}}" class="manual-task-image">
+    </div>
+    <ion-content class="manual-task-instructions">
+        {{taskInstructions}}
+    </ion-content>
+  </div>
+
+<div class="page-back" ng-click="goTo('dashboard')">&lt back</div>
+</ion-view>

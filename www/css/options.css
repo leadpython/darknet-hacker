@@ -1,0 +1,13 @@
+#options-reset {
+  position: absolute;
+  top: 50px;
+  left: 5px;
+  right: 5px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(25,25,25);
+  font-size: 30px;
+}
+#options-reset:active {
+  background-color: rgb(50,50,50);
+}

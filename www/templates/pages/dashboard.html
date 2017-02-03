@@ -38,6 +38,17 @@
         <div class="dashboard-toolbox-column-label" style="flex: 1;">quantity</div>
       </div>
       <ion-content id="dashboard-toolbox-tools-container">
+        <div class="dashboard-toolbox-item">
+          <div class="dashboard-toolbox-image-container">
+            <!--<img class="dashboard-toolbox-item-image" src="/img/burner.png">-->
+          </div>
+          <div class="dashboard-toolbox-description">
+            <!--<img class="dashboard-toolbox-item-image" src="/img/burner.png">-->
+          </div>
+          <div class="dashboard-toolbox-quantity">
+            <!--<img class="dashboard-toolbox-item-image" src="/img/burner.png">-->
+          </div>
+        </div>
       </ion-content>
   </div>
 </div>
@@ -52,7 +63,7 @@
       <img class="dashboard-command-image" src="./img/market.png">
       <div class="dashboard-command-label">black market</div>
     </div>
-    <div class="dashboard-command">
+    <div class="dashboard-command" ng-click="goTo('manual')">
       <img class="dashboard-command-image" src="./img/manual.png">
       <div class="dashboard-command-label">hacker manual</div>
     </div>

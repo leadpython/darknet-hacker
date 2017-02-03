@@ -110,6 +110,32 @@
   right: 0px;
   bottom: 0px;
 }
+.dashboard-toolbox-item {
+  position: relative;
+  border: 1px solid rgb(25,25,25);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.dashboard-toolbox-image-container {
+  position: absolute;
+  flex: 1;
+  display: inline-block;
+  height: 100%;
+  background-color: rgb(50,50,50);
+}
+.dashboard-toolbox-item-image {
+  height: 100%;
+  width: auto;
+  padding: 10px;
+}
+.dashboard-toolbox-description {
+  flex: 1;
+}
+.dashboard-toolbox-description {
+  flex: 1;
+}
 
 /* COMAND CENTER */
 #dashboard-command-center {

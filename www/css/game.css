@@ -81,6 +81,7 @@
   padding-left: 10px;
   font-size: 20px;
   color: rgb(0,100,0);
+  z-index: 9999;
 }
 
 /* TRIES WIDGET */

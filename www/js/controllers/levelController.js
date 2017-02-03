@@ -18,6 +18,10 @@ angular.module('darknet-hacker')
     }
   }
   $scope.setLevel = (level) => {
+    if (dataService.user.money.dollars < (level.reward / 5)) {
+      return;
+    }
+    dataService.updateDollars(-1 * level.reward / 5); 
     gameService.setLevel(level, $scope.selectedLevel.indexLevel);
     $scope.hideLevelModal();
     $scope.loadingBarProgress = 0;
@@ -85,5 +89,8 @@ angular.module('darknet-hacker')
       }
     }
     return commafied.join('');
+  }
+  $scope.getPlayerDollars = () => {
+    return dataService.user.money.dollars;
   }
 });

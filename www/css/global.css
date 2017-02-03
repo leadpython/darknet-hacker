@@ -17,6 +17,8 @@
   background-color: rgb(25,25,25);
   text-align: center;
   height: 40px;
+  font-family: square;
+  color: #00cc99;
 }
 .page-back:active {
   background-color: rgb(150,150,150);

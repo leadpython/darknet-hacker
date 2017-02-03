@@ -1,0 +1,53 @@
+#manual-page {
+  background-color: black;
+}
+#manual-navbar {
+  background-color: black;
+  border: 1px solid rgb(50,50,50);;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0px;
+  width: 125px;
+}
+.manual-task {
+  color: #00cc99;
+  font-family: square;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 0px;
+  background-color: rgb(25,25,25);
+  padding: 10px;
+  border-bottom: 1px solid rgb(50,50,50);
+}
+.manual-task-animation {
+  position: absolute;
+  top: 0;
+  bottom: 0px;
+  left: 125px;
+  right: 0px;
+}
+.manual-task-image-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 25%;
+  border-bottom: 1px solid rgb(50,50,50);
+  text-align: center;
+}
+.manual-task-image {
+  height: 100%;
+  width: auto;
+}
+.manual-task-instructions {
+  position: absolute;
+  bottom: 40px;
+  right: 0px;
+  top: 75%;
+  color: #00cc99;
+  font-family: square;
+  padding: 5px;
+  font-size: 12px;
+  line-height: 15px;
+}

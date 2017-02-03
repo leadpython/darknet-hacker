@@ -4,7 +4,7 @@
 #levels-page-content {
   position: absolute;
   top: 0;
-  bottom: 40px;
+  bottom: 45px;
   left: 0;
   right: 0px;
   padding: 5px;
@@ -14,7 +14,6 @@
 .levels-level-container {
   position: relative;
   margin: 10px;
-  position: relative;
 }
 .level-lock {
   position: absolute;

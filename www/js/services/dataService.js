@@ -29,10 +29,10 @@ angular.module('darknet-hacker')
       cryptocoin: 0
     };
     service.user.toolbox = {
-      burnerPhone: 5,
-      speed: 5,
-      disrupt: 5,
-      keylogger: 5
+      burnerPhone: 0,
+      speed: 0,
+      disrupt: 0,
+      keylogger: 0
     };
     service.user.completed = [
       {
