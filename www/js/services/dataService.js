@@ -28,6 +28,11 @@ angular.module('darknet-hacker')
       dollars: 500,
       cryptocoin: 0
     };
+    service.user.statistics = {
+      games: 0,
+      wins: 0,
+      losses: 0
+    };
     service.user.toolbox = {
       burnerPhone: 0,
       speed: 0,

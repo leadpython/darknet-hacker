@@ -62,12 +62,16 @@ angular.module('darknet-hacker')
       instructions: `Your hacker toolbox is located on the right. You can buy these from the black market with cryptocoins. They give you tactical advantages on more difficult hacking targets.`
     }
   ];
-  $scope.selectTask = (index) => {
-    $interval.cancel($scope.imageAnimation);
-    if (index >= $scope.tasks.length - 1) {
-      $scope.goTo('dashboard');
-      return;
+  $scope.getBackground = (index) => {
+    if (index === $scope.selectedIndex) {
+      return 'rgb(75,75,75)';
+    } else {
+      return 'rgb(25,25,25)';
     }
+  }
+  $scope.selectTask = (index) => {
+    $scope.selectedIndex = index;
+    $interval.cancel($scope.imageAnimation);
     $scope.selectedTask = $scope.tasks[index];
     $scope.taskInstructions = $scope.selectedTask.instructions;
     var imageIndex = 0;

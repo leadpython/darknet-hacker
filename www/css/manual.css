@@ -13,12 +13,11 @@
 .manual-task {
   color: #00cc99;
   font-family: square;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 15px;
-  margin: 0px;
+  margin: 5px;
   background-color: rgb(25,25,25);
   padding: 10px;
-  border-bottom: 1px solid rgb(50,50,50);
 }
 .manual-task-animation {
   position: absolute;
@@ -39,6 +38,7 @@
 .manual-task-image {
   height: 100%;
   width: auto;
+  max-width: 100%;
 }
 .manual-task-instructions {
   position: absolute;

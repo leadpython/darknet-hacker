@@ -71,7 +71,7 @@ angular.module('darknet-hacker')
   // Loading modal
   $ionicModal.fromTemplateUrl('./templates/modals/loading-modal.html', {
     scope: $scope,
-    animation: 'slide-in-up'
+    animation: 'none'
   }).then((modal) => {
     $scope.loadingModal = modal;
   });

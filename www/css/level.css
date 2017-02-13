@@ -146,7 +146,7 @@
 
 /* LOADING MODAL */
 #loading-modal-page {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,1);
 }
 .loading-widget {
   position: absolute;
@@ -155,7 +155,6 @@
   right: 30px;
   height: 100px;
   background-color: black;
-  border: 2px solid rgb(255,100,100);
 }
 .loading-widget-message {
   width: 100%;
@@ -163,7 +162,7 @@
   position: absolute;
   top: 40px;
   font-size: 30px;
-  color: rgb(255,100,100);
+  color: #00cc99;
 }
 .loading-widget-container {
   position: absolute;
@@ -178,7 +177,7 @@
   top: 0;
   bottom: 0;
   left: 0;
-  background-color: rgb(255,100,100);
+  background-color: #00cc99;
 }
 
 /* MODES */

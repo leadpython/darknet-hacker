@@ -2,11 +2,8 @@
 
 <!-- ACCOUNT WIDGET -->
 <div id="game-account-widget">
-  <img id="game-account-image" src="{{gameOptions.imageUrl}}">
-  <div id="game-account-login">
-    <div class="game-account-label"><u>password:</u></div>
-    <div class="game-account-inputs">{{playerGuess}}</div>
-  </div>
+  <div class="game-account-inputs">{{playerGuess}}</div>
+  <div class="game-keylogger-tip" ng-if="keyloggerOn">keylogger output: {{pass}}</div>
 </div>
 
 <!-- BANK BALANCE -->
@@ -18,10 +15,6 @@
   </div>
 </div>
 
-<!-- DRAIN INDICATOR -->
-<div id="game-drain-indicator" ng-if="shouldDrainShow()">
-  <img id="game-drain-image" src="./img/darknet.png">
-</div>
 
 <!-- TRIES WIDGET -->
 <div id="game-tries-container">
@@ -83,7 +76,7 @@
 </ion-content>
 
 <!-- DISRUPTED -->
-<div id="game-state-disrupted" ng-if="gameState.disrupted">defenses disabled</div>
+<div id="game-state-disrupted" ng-if="gameState.disrupted"><img class="game-state-image" src="img/darknet.png"></div>
 <!-- TIME SLOW -->
 <div id="game-state-time" ng-if="gameState.slowed">time is slow</div>
 

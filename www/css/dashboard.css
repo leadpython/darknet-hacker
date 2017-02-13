@@ -76,8 +76,8 @@
   border-bottom: 1px solid rgb(50,50,50);
 }
 
-/* HACKING TOOLBOX WIDGET */
-#dashboard-toolbox-widget {
+/* HACKING STATS WIDGET */
+#dashboard-stats-widget {
   position: absolute;
   left: 5px;
   right: 5px;
@@ -85,56 +85,32 @@
   bottom: 60px;
   padding: 10px;
 }
-#dashboard-toolbox-content {
+#dashboard-stats-content {
   background-color: black;
-}
-#dashboard-toolbox-column-label-container {
-  position: absolute;
-  display: flex;
-  color: rgb(100,100,100);
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  height: 20px;
-  border-bottom: 1px solid rgb(50,50,50);
-}
-.dashboard-toolbox-column-label {
-  font-size: 12px;
-  text-align: center;
-}
-#dashboard-toolbox-tools-container {
-  position: absolute;
   padding: 5px;
-  top: 20px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
 }
-.dashboard-toolbox-item {
+.dashboard-stats-item {
   position: relative;
-  border: 1px solid rgb(25,25,25);
-  width: 100%;
+  background-color: rgb(25,25,25);
   height: 50px;
+  width: 100%;
+  margin-bottom: 5px;
   display: flex;
-  flex-direction: row;
 }
-.dashboard-toolbox-image-container {
-  position: absolute;
+.dashboard-stats-item-number {
   flex: 1;
-  display: inline-block;
-  height: 100%;
   background-color: rgb(50,50,50);
+  font-size: 25px;
+  line-height: 25px;
+  text-align: center;
+  padding-top: 12px;
 }
-.dashboard-toolbox-item-image {
-  height: 100%;
-  width: auto;
-  padding: 10px;
-}
-.dashboard-toolbox-description {
-  flex: 1;
-}
-.dashboard-toolbox-description {
-  flex: 1;
+.dashboard-stats-item-name {
+  flex: 4;
+  font-size: 20px;
+  line-height: 20px;
+  padding-left: 10px;
+  padding-top: 15px;
 }
 
 /* COMAND CENTER */
@@ -164,4 +140,58 @@
 .dashboard-command-label {
   font-size: 10px;
   line-height: 10px;
+}
+
+/* LOGIN PAGE */
+#login-modal-page {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(25,25,25);
+  text-align: center;
+}
+#login-modal-username {
+  background-color: black;
+  border: 1px solid rgb(50,50,50);
+  height: 40px;
+  width: 100%;
+  color: #00cc99;
+  font-family: square;
+  padding: 10px;
+  font-size: 25px;
+  text-align: left;
+}
+.login-modal-input-container {
+  position: absolute;
+  top: 25%;
+  left: 20px;
+  right: 20px;
+}
+.login-keyboard-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2px;
+}
+.login-keyboard-row {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 1px;
+}
+.login-keyboard-key {
+  flex: 1;
+  margin: 1px;
+  background-color: rgb(50,50,50);
+  color: #00cc99;
+  font-family: square;
+  height: 50px;
+  font-size: 20px;
+}
+.login-keyboard-key:active {
+  background-color: #00cc99;
+  color: black;
 }

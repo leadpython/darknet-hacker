@@ -21,6 +21,7 @@ angular.module('darknet-hacker')
     initiateDefenses();
   });
   $scope.$on('$ionicView.leave', () => {
+    $scope.keypadModal = modal;
     stopDefenseAnimations();
   });
 
@@ -93,6 +94,8 @@ angular.module('darknet-hacker')
 
   // GAME EVENTS
   function triggerWin() {
+    dataService.user.statistics.games++;
+    dataService.user.statistics.wins++;
     $scope.gameState.done = true;
     stopDefenseAnimations();
     $scope.winModal.show();
@@ -100,9 +103,12 @@ angular.module('darknet-hacker')
     dataService.updateDollars($scope.gameOptions.reward);
   }
   function triggerLoss() {
+    dataService.user.statistics.games++;
+    dataService.user.statistics.losses++;
     $scope.gameState.done = true;
+    stopDefenseAnimations();
+    soundService.play('cop');
     $scope.lossModal.show();
-    console.log("GAME OVER!")
   }
 
   // GAME OPTIONS
@@ -134,6 +140,7 @@ angular.module('darknet-hacker')
     if (e.target.style.background === 'red') {
       return;
     }
+    soundService.play('hack');
     e.target.style.background = 'red';
     let decrement = Math.floor($scope.gameOptions.reward * 0.01);
     $scope.drainOffenseAnimation = $interval(() => {
@@ -193,12 +200,16 @@ angular.module('darknet-hacker')
   // HACKING TOOLS
   // when player uses disrupt hacking tool
   $scope.activateDisruption = () => {
+    if ($scope.gameState.disrupted) {
+      return;
+    }
     if ($scope.gameState.done) {
       return;
     }
     if (dataService.user.toolbox.disrupt <= 0) {
       return;
     }
+    soundService.play('shutdown');
     stopDefenseAnimations();
     $scope.gameState.disrupted = true;
     $timeout(() => {
@@ -215,11 +226,12 @@ angular.module('darknet-hacker')
     if (dataService.user.toolbox.speed <= 0) {
       return;
     }
+    soundService.play('slomo');
     stopDefenseAnimations();
     $scope.gameState.slowed = true;
     $scope.gameOptions.timeSpeedMultiplier = 2;
     initiateDefenses();
-    dataService.useTool('speed');
+    dataService.useTool('slomo');
   }
   // when player uses burner phone
   $scope.activateBurnerPhone = () => {
@@ -229,6 +241,7 @@ angular.module('darknet-hacker')
     if (dataService.user.toolbox.burnerPhone <= 0) {
       return;
     }
+    soundService.play('click');
     $scope.gameOptions.tries++;
     dataService.useTool('burnerPhone');
   }
@@ -240,6 +253,9 @@ angular.module('darknet-hacker')
     if (dataService.user.toolbox.keylogger <= 0) {
       return;
     }
+    soundService.play('click');
+    $scope.keyloggerOn = true;
+    $scope.pass = gameService.activateKeylogger();
     dataService.useTool('keylogger');
   }
 

@@ -1,6 +1,6 @@
 <ion-view id="manual-page">
   <ion-content id="manual-navbar">
-    <div class="manual-task" ng-repeat="task in tasks track by $index" ng-click="selectTask($index)">
+    <div class="manual-task" style="background: {{getBackground($index)}}" ng-repeat="task in tasks track by $index" ng-click="selectTask($index)">
       {{task.title}}
     </div>
   </ion-content>

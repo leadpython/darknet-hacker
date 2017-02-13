@@ -7,7 +7,7 @@ angular.module('darknet-hacker', ['ionic'])
       cordova.plugins.Keyboard.disableScroll(true);
     }
     if(window.StatusBar) {
-      StatusBar.styleDefault();
+      StatusBar.hide();
     }
   });
 })

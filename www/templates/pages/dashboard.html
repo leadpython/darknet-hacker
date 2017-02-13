@@ -7,7 +7,7 @@
       <img id="dashboard-profile-image" src="./img/darknet-hacker.png">
       <div id="dashboard-profile-details">
         <div class="dashboard-profile-details-label"><u>codename:</u></div>
-        <div class="dashboard-profile-details-info">leadpython</div>
+        <div class="dashboard-profile-details-info">{{getUsername()}}</div>
       </div>
   </div>
 </div>
@@ -28,28 +28,26 @@
   </div>
 </div>
 
-<!-- TOOLBOX -->
-<div class="widget-box" id="dashboard-toolbox-widget">
-  <div class="widget-box-header">hacking toolbox</div>
-  <div class="widget-box-content" id="dashboard-toolbox-content">
-      <div id="dashboard-toolbox-column-label-container">
-        <div class="dashboard-toolbox-column-label" style="flex: 1;">icon</div>
-        <div class="dashboard-toolbox-column-label" style="flex: 3; border-left: 1px solid rgb(50,50,50); border-right: 1px solid rgb(50,50,50);">name/description</div>
-        <div class="dashboard-toolbox-column-label" style="flex: 1;">quantity</div>
-      </div>
-      <ion-content id="dashboard-toolbox-tools-container">
-        <div class="dashboard-toolbox-item">
-          <div class="dashboard-toolbox-image-container">
-            <!--<img class="dashboard-toolbox-item-image" src="/img/burner.png">-->
-          </div>
-          <div class="dashboard-toolbox-description">
-            <!--<img class="dashboard-toolbox-item-image" src="/img/burner.png">-->
-          </div>
-          <div class="dashboard-toolbox-quantity">
-            <!--<img class="dashboard-toolbox-item-image" src="/img/burner.png">-->
-          </div>
-        </div>
-      </ion-content>
+<!-- STATISTICS -->
+<div class="widget-box" id="dashboard-stats-widget">
+  <div class="widget-box-header">hacker statistics</div>
+  <div class="widget-box-content" id="dashboard-stats-content">
+    <div class="dashboard-stats-item">
+      <div class="dashboard-stats-item-number">{{getGames()}}</div>
+      <div class="dashboard-stats-item-name">hacks</div>
+    </div>
+    <div class="dashboard-stats-item">
+      <div class="dashboard-stats-item-number">{{getWins()}}</div>
+      <div class="dashboard-stats-item-name">success</div>
+    </div>
+    <div class="dashboard-stats-item">
+      <div class="dashboard-stats-item-number">{{getLosses()}}</div>
+      <div class="dashboard-stats-item-name">failures</div>
+    </div>
+    <div class="dashboard-stats-item">
+      <div class="dashboard-stats-item-number">{{getSuccessRate()}}%</div>
+      <div class="dashboard-stats-item-name">success rate</div>
+    </div>
   </div>
 </div>
 
