@@ -15,13 +15,14 @@ angular.module('darknet-hacker')
       timeSpeedMultiplier: 1,
       disruptTime: 30
     };
+    $scope.keyloggerOn = false;
     $scope.keypadButtonState = 'color: #00cc99; background-color: rgb(25,25,25)';
     initializeAssets();
     setGameOptions();
     initiateDefenses();
   });
   $scope.$on('$ionicView.leave', () => {
-    $scope.keypadModal = modal;
+    $scope.hideKeypad();
     stopDefenseAnimations();
   });
 
@@ -107,7 +108,6 @@ angular.module('darknet-hacker')
     dataService.user.statistics.losses++;
     $scope.gameState.done = true;
     stopDefenseAnimations();
-    soundService.play('cop');
     $scope.lossModal.show();
   }
 
@@ -140,7 +140,6 @@ angular.module('darknet-hacker')
     if (e.target.style.background === 'red') {
       return;
     }
-    soundService.play('hack');
     e.target.style.background = 'red';
     let decrement = Math.floor($scope.gameOptions.reward * 0.01);
     $scope.drainOffenseAnimation = $interval(() => {
@@ -209,7 +208,6 @@ angular.module('darknet-hacker')
     if (dataService.user.toolbox.disrupt <= 0) {
       return;
     }
-    soundService.play('shutdown');
     stopDefenseAnimations();
     $scope.gameState.disrupted = true;
     $timeout(() => {
@@ -226,12 +224,11 @@ angular.module('darknet-hacker')
     if (dataService.user.toolbox.speed <= 0) {
       return;
     }
-    soundService.play('slomo');
     stopDefenseAnimations();
     $scope.gameState.slowed = true;
     $scope.gameOptions.timeSpeedMultiplier = 2;
     initiateDefenses();
-    dataService.useTool('slomo');
+    dataService.useTool('speed');
   }
   // when player uses burner phone
   $scope.activateBurnerPhone = () => {
@@ -241,7 +238,6 @@ angular.module('darknet-hacker')
     if (dataService.user.toolbox.burnerPhone <= 0) {
       return;
     }
-    soundService.play('click');
     $scope.gameOptions.tries++;
     dataService.useTool('burnerPhone');
   }
@@ -253,7 +249,6 @@ angular.module('darknet-hacker')
     if (dataService.user.toolbox.keylogger <= 0) {
       return;
     }
-    soundService.play('click');
     $scope.keyloggerOn = true;
     $scope.pass = gameService.activateKeylogger();
     dataService.useTool('keylogger');

@@ -34,10 +34,10 @@ angular.module('darknet-hacker')
       losses: 0
     };
     service.user.toolbox = {
-      burnerPhone: 0,
-      speed: 0,
-      disrupt: 0,
-      keylogger: 0
+      burnerPhone: 1,
+      speed: 1,
+      disrupt: 1,
+      keylogger: 1
     };
     service.user.completed = [
       {

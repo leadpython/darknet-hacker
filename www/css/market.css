@@ -17,7 +17,7 @@
   background-color: rgb(50,50,50);
   height: 200px;
   flex: 1;
-  margin: 2px;
+  margin: 2px; 
   padding: 5px;
   text-align: center;
 }
@@ -39,16 +39,16 @@
   font-size: 15px;
   padding-top: 3px;
   color: #00cc99;
-  line-height: 15px;
+  line-height: 12px;
 }
 .market-product-item-description {
-  position: absolute;
+  /*position: relative;*/
   padding: 2px;
   color: rgb(125,125,125);
   left: 5px;
   right: 5px;
   bottom: 5px;
-  top: 145px;
+  top: 142px;
   font-size: 12px;
   line-height: 12px;
 }
