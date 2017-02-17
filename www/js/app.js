@@ -15,6 +15,7 @@ angular.module('darknet-hacker', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.views.transition('none');
   $ionicConfigProvider.views.swipeBackEnabled(false);
+  $ionicConfigProvider.views.maxCache(0);
   $stateProvider
     .state('dashboard', {
       url: '/dashboard',

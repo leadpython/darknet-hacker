@@ -1,5 +1,11 @@
 <ion-modal-view id="game-keypad-modal">
 
+<!-- ACCOUNT WIDGET -->
+<div id="game-account-widget">
+  <div class="game-account-inputs">{{playerGuess}}</div>
+  <div class="game-keylogger-tip" ng-if="keyloggerOn">keylogger output: {{pass}}</div>
+</div>
+
 <!-- KEYPAD -->
 <div id="game-keypad">
   <div class="game-keypad-row">

@@ -29,8 +29,8 @@ angular.module('darknet-hacker')
   $scope.purchase = (item) => {
     switch (item) {
       case 'cryptocoin':
-        if (dataService.user.money.dollars >= 1000) {
-          dataService.updateDollars(-1000);
+        if (dataService.user.money.dollars >= 500) {
+          dataService.updateDollars(-500);
           dataService.updateCryptocoin(1);
           soundService.play('buy');
         }

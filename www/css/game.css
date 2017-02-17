@@ -3,10 +3,11 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  bottom: 300px;
   background-color: rgb(25,25,25);
-  padding: 20px;
-  height: 100px;
+  padding: 10px;
+  margin: 5px;
+  margin-bottom: 0;
 }
 #game-account-login {
   position: absolute;
@@ -18,12 +19,8 @@
   padding-right: 20px;
 }
 .game-account-inputs {
-  position: absolute;
-  left: 25px;
-  right: 25px;
-  top: 40px;
-  height: 35px;
   background-color: black;
+  height: 40px;
   color: #00cc99;
   font-size: 35px;
   padding: 10px;
@@ -34,14 +31,14 @@
 #game-bank-balance-container {
   position: absolute;
   background-color: rgb(25,25,25);
-  top: 105px;
+  top: 5px;
   left: 5px;
   right: 5px;
-  height: 35px;
+  height: 50px;
 }
 #game-bank-balance-image {
   position: absolute;
-  margin-top: -7px;
+  margin-top: 0px;
   top: 0px;
   left: 0px;
   height: 50px;
@@ -67,9 +64,9 @@
   position: relative;
   right: 0;
   width: 100%;
-  padding: 2px;
+  padding: 10px;
   padding-left: 10px;
-  font-size: 20px;
+  font-size: 25px;
   color: rgb(0,100,0);
   z-index: 9999;
 }
@@ -78,7 +75,7 @@
 #game-tries-container {
   position: absolute;
   background-color: rgb(25,25,25);
-  top: 145px;
+  top: 60px;
   left: 5px;
   right: 5px;
   height: 50px;
@@ -161,9 +158,9 @@
 /* HISTORY LOG */
 #game-history-log {
   position: absolute;
-  top: 200px;
+  top: 115px;
   left: 5px;
-  bottom: 5px;
+  bottom: 55px;
   right: 110px;
   border: 2px solid rgb(25,25,25);
 }
@@ -185,6 +182,9 @@
   padding-left: 5px;
   font-size: 25px;
   color: rgb(0,150,255);
+  text-decoration: none;
+  color: inherit;
+  pointer-events: none;
 }
 .game-history-log-row {
   position: relative;
@@ -205,13 +205,12 @@
   display: flex;
   flex-direction: column;
   background-color: black;
-  padding: 25px;
   padding: 2px;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 275px;
+  height: 300px;
 }
 .game-keypad-row {
   position: relative;
@@ -223,7 +222,7 @@
   text-align: center;
   display: inline-block;
   flex: 1;
-  font-size: 20px;
+  font-size: 25px;
   margin: 2px;
   background-color: rgb(25,25,25);
   padding: 10px;
@@ -239,7 +238,7 @@
   background-color: rgb(0,0,0);
   position: absolute;
   left: auto;
-  top: 200px;
+  top: 115px;
   right: 5px;
   bottom: 55px;
   width: 100px;
@@ -314,7 +313,7 @@
 #game-keypad-toggle-button {
   position: absolute;
   display: flex;
-  width: 100px;
+  left: 5px;
   right: 5px;
   bottom: 5px;
   height: 45px;
@@ -335,7 +334,7 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 200px;
+  left: 0;
   height: 200px;
 }
 
@@ -375,21 +374,31 @@
 #game-lose-modal-locked {
   position: absolute;
   font-family: square;
-  background-color: rgba(255,0,0,0.5);
-  left: 50px;
-  right: 50px;
-  top: 150px;
+  background-color: rgba(25,25,25,1);
+  left: 20px;
+  right: 20px;
+  top: 120px;
+  height: 170px;
   font-size: 50px;
-  color: black;
   text-align: center;
   font-weight: bold;
-  padding-top: 45px;
-  padding-bottom: 40px;
+}
+#game-lose-modal-locked-label {
+  color: #00cc99;
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: normal;
+}
+#game-lose-modal-locked-combination {
+  color: #00cc99;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: normal;
 }
 #game-lose-modal-disconnect {
   position: absolute;
-  top: 260px;
-  font-size: 25px;
+  top: 240px;
+  font-size: 20px;
   line-height: 25px;
   font-family: square;
   text-align: center;

@@ -9,7 +9,7 @@ angular.module('darknet-hacker')
       imageUrl: '',
       mode: 'normal',
       reward: 0,
-      tries: 7,
+      tries: 10,
       timeLimit: 90,
       drainRate: 0.002,
       timeSpeedMultiplier: 1,
@@ -156,6 +156,9 @@ angular.module('darknet-hacker')
       }
     }, 20);
   }
+  $scope.getCorrectPass = () => {
+    return gameService.secretCode;
+  }
 
   // LEVEL DEFENSES
   // start level defenses, if any
@@ -224,6 +227,12 @@ angular.module('darknet-hacker')
     if (dataService.user.toolbox.speed <= 0) {
       return;
     }
+    if ($scope.gameState.slowed) {
+      return;
+    }
+    if ($scope.gameState.disrupted) {
+      return;
+    }
     stopDefenseAnimations();
     $scope.gameState.slowed = true;
     $scope.gameOptions.timeSpeedMultiplier = 2;
@@ -247,6 +256,9 @@ angular.module('darknet-hacker')
       return;
     }
     if (dataService.user.toolbox.keylogger <= 0) {
+      return;
+    }
+    if ($scope.keyloggerOn) {
       return;
     }
     $scope.keyloggerOn = true;

@@ -1,4 +1,7 @@
 <ion-modal-view id="game-lose-modal-page">
-  <div id="game-lose-modal-locked">locked out</div>
+  <div id="game-lose-modal-locked">
+    <div id="game-lose-modal-locked-label">You are locked out.</div>
+    <div id="game-lose-modal-locked-combination">The secret combination was:<br><span style="font-size: 25px;">{{getCorrectPass()}}</span> </div>
+  </div>
   <div id="game-lose-modal-disconnect" ng-click="disconnect()">disconnect</div>
 </ion-modal-view>
