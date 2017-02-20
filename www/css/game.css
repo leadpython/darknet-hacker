@@ -127,7 +127,7 @@
 #game-time-container {
   position: absolute;
   background-color: rgb(25,25,25);
-  top: 125px;
+  top: 40px;
   right: 0px;
   height: 50px;
   width: 110px;
@@ -281,18 +281,15 @@
   font-size: 25px;
   font-weight: bold;
   color: black;
-  padding: 50px;
   background-color: rgba(0,0,0,0.5);
   top: 0px;
   left: 0;
-  height: 200px;
+  height: 115px;
   right: 0px;
   text-align: center;
-  padding: 25px;
+  padding: 20px;
 }
 .game-state-image {
-  padding: 20px;
-  padding-top: 50px;
   height: 100%;
   width: auto;
 }
@@ -301,7 +298,7 @@
 #game-state-time {
   position: absolute;
   right: 0px;
-  top: 100px;
+  top: 15px;
   padding: 5px;
   z-index: 9999;
   color: black;
