@@ -76,10 +76,10 @@ angular.module('darknet-hacker')
     if ($scope.gameState.done) {
       return;
     }
-    $scope.playerGuess = ''
     let feedback = gameService.checkCode($scope.playerGuess);
     $scope.gameOptions.tries--;
     $scope.historyLog.unshift(feedback);
+    $scope.playerGuess = '';
     $scope.hideKeypad();
 
     // trigger a win if guess was correct
